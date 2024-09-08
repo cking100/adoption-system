@@ -11,4 +11,5 @@ public class Shelter {
     private String name;
     private String location;
     private String email;
+    private String last;
 }
