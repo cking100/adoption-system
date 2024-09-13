@@ -28,18 +28,15 @@ public class PetServiceImpl implements PetService {
     }
     @Override
     public Pet updatePet(Long id, Pet petDetails) {
-        // Step 1: Retrieve the pet from the repository by its id
         Pet existingPet = petRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Pet not found with id: " + id));
 
-        // Step 2: Update the fields (assuming the Pet entity has fields like name, type, age, etc.)
         existingPet.setName(petDetails.getName());
         existingPet.setType(petDetails.getType());
         existingPet.setAge(petDetails.getAge());
         existingPet.setBreed(petDetails.getBreed());
         existingPet.setDescription(petDetails.getDescription());
 
-        // Step 3: Save the updated pet to the repository
         return petRepository.save(existingPet);
     }
     @Override
