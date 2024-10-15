@@ -20,4 +20,8 @@ public class Shelter {
     private String location;
     private String email;
     private String last;
+    private String capacity;
+
+    public void setcapacity(String capacity) {
+    }
 }
